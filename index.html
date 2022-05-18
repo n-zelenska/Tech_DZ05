@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.8/aframe/build/aframe-ar.js"></script>
+    <body style="margin: 0px; overflow: hidden;">
+        <a-scene webx="requiredFeatures: hit-test, local-floor;
+        optionalFeatures: dom-overlay, unbounded;
+        overlayElement:#overlay;">
+            <a-marker preset="hiro">
+                <a-box position="0 0.5 0" scale="0.2 0.2 0.2" material="color: blue"></a-box>
+                <a-torus-knot position="0 0.5 0.5" color="#336119" radius="0.1" radius-tubular="0.05" p="2" q="5"
+                animation="property: rotation; to: 360 0 0; loop: true; dur:7000"></a-torus-knot>
+                <a-sphere color="#89242F" radius="0.2" position="0 0.5 -0.5"></a-sphere>
+            </a-marker>
+
+            <a-marker preset="kanji">
+                <a-sphere position="0 0.5 0" radius="0.1" material="color: blue"></a-sphere>
+                <a-torus position="0.3 0.5 0" color="#196152" radius="0.1" radius-tubular="0.05"
+                animation="property: rotation; to: 0 360 0; loop: true; dur:4000"></a-torus>
+                <a-octahedron color="#FF926B" radius="0.15" position="-0.3 0.5 0"></a-octahedron>
+            </a-marker>
+
+            <a-marker type='pattern' url='https://raw.githubusercontent.com/n-zelenska/markers/main/pattern-Z.patt'>
+                <a-box position="0 1.5 0" scale="0.2 0.2 0.2" material="color: #8211BB"></a-box>
+                <a-octahedron color="#FF926B" radius="0.5" position="1 0.5 0"
+                animation="property: rotation; to: 0 0 360; loop: true; dur:7000"></a-octahedron>
+                <a-octahedron color="#FF926B" radius="0.5" position="-1 0.5 0"
+                animation="property: rotation; to: 0 0 360; loop: true; dur:7000"></a-octahedron>
+                <a-torus-knot color="#5E8C22" arc="180" p="2" q="5" radius="0.5" radius-tubular="0.1"
+                animation="property: rotation; to: 360 360 360; loop: true; dur:4000"></a-torus-knot>
+            </a-marker>
+
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
